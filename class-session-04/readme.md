@@ -1,4 +1,4 @@
-# Today we learn about CLI (Command Line Interface).
+# Today we learn about CLI (Command Line Interface). <br>
 ## cd stand for (Change Directory).
 ## mkdir stand for (Make Directory).
 
@@ -8,3 +8,5 @@ git commit -m "comment message" -- for committing changes with the message.
 git push origin -- for pushing the changes to the repository.
 
 git clone "paste the https command from github" -- for cloning the repository into our local system or pc.
+
+git stand for (global information tracker).
