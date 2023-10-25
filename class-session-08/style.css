@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+/* Importing a font from Google Fonts called Muli */
+
+* {
+  box-sizing: border-box;
+}
+/* Applying box-sizing: border-box to all elements in the document */
+
+body {
+  font-family: "Muli", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+/* Styling the body element:
+   - Using the font-family Muli with fallback to sans-serif
+   - Displaying flexbox layout with centered alignment and justification
+   - Setting the height of the body to occupy the full viewport height
+   - Hiding any overflow beyond the body
+   - Removing margin */
+
+.container {
+  display: flex;
+  width: 90vw;
+}
+/* Styling the container class:
+   - Displaying flexbox layout
+   - Setting the width to 90% of the viewport width */
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  -webkit-transition: all 700ms ease-in;
+}
+/* Styling the panel class:
+   - Setting the background size to cover the element
+   - Centering the background image
+   - Preventing the background image from repeating
+   - Setting the height to 80% of the viewport height
+   - Applying a border radius of 50 pixels
+   - Setting the text color to white
+   - Changing the cursor to a pointer on hover
+   - Setting the flex property to 0.5 of the available space
+   - Setting a margin of 10 pixels around the panel
+   - Creating a new stacking context for child absolutely positioned elements
+   - Applying a CSS transition with a duration of 700ms and easing */
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+/* Styling the h3 element inside panels:
+   - Setting the font size to 24 pixels
+   - Positioning it absolutely at the bottom-left corner of the panel
+   - Removing any margins around the element
+   - Initially setting the opacity to 0 to hide it */
+
+.panel.active {
+  flex: 5;
+}
+/* Styling the active panels:
+   - Expanding the flex property to occupy 5 times the available space */
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+/* Styling the h3 element inside active panels:
+   - Setting the opacity to 1 to make it visible
+   - Applying a CSS transition to gradually change the opacity over 0.3 seconds with an initial delay of 0.4 seconds */
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+  /* Applying responsive styles when the viewport width is 480 pixels or less:
+     - Setting the container width to occupy the full viewport width */
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+  /* Hiding the 4th and 5th panels when the viewport width is 480 pixels or less */
+}
