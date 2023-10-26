@@ -1,0 +1,43 @@
+<!-- This is a comment for the entire HTML document. It specifies that the document type is HTML and the language is English. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- This meta tag specifies the character encoding for the document. It sets the character set to UTF-8. -->
+    <meta charset="UTF-8" />
+
+    <!-- This meta tag sets the viewport of the document, which affects how it is displayed on different devices. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- This link tag specifies the stylesheet file that will be used to style the HTML document. The file is style.css. -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- The title element sets the title of the HTML document, which will be displayed in the browser's title bar or tab. -->
+    <title>Progress Steps</title>
+  </head>
+  <body>
+    <!-- The container class is used to group elements together. -->
+    <div class="container">
+      <!-- The progress-container class is used to create a container for the progress indicators. -->
+      <div class="progress-container">
+        <!-- The progress class is used to display the progress bar. -->
+        <div class="progress" id="progress"></div>
+
+        <!-- The circle class is used to create the individual progress circles. -->
+        <!-- The first circle has the active class to indicate the current step. -->
+        <div class="circle active">1</div>
+        <div class="circle">2</div>
+        <div class="circle">3</div>
+        <div class="circle">4</div>
+      </div>
+
+      <!-- The prev button is used to go to the previous step. It is initially disabled. -->
+      <button class="btn" id="prev" disabled>Prev</button>
+
+      <!-- The next button is used to go to the next step. -->
+      <button class="btn" id="next">Next</button>
+    </div>
+
+    <!-- This script tag specifies the JavaScript file that will be used to add functionality to the HTML document. The file is script.js. -->
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+/* Importing the Muli font from Google Fonts */
+
+:root {
+  --line-border-fill: #3498db;
+  --line-border-empty: #383838;
+}
+/* Defining two custom CSS variables to be used for line border colors */
+
+* {
+  box-sizing: border-box;
+}
+/* Applying the box-sizing: border-box property to all elements */
+
+body {
+  background-color: #1f1f1f;
+  font-family: "Muli", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+/* Styling the body element with a dark background color, using the Muli font as the default font family, */
+/* setting it to be a flex container with center-aligned and justified content, */
+/* fixing its height to 100% of the viewport height, hiding any overflowing content, and removing any margin */
+
+.container {
+  text-align: center;
+}
+/* Styling the container element with centered text alignment */
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 350px;
+}
+/* Styling the progress-container element as a flex container with space between each child element, */
+/* positioning it relatively, adding a bottom margin, setting a maximum width of 100% and a fixed width of 350px */
+
+.progress-container::before {
+  content: "";
+  background-color: var(--line-border-empty);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+}
+/* Creating a pseudo-element before the progress-container element to display an empty line border */
+/* Setting its background color using the --line-border-empty CSS variable, */
+/* positioning it absolutely, centering it vertically, stretching it horizontally, and placing it behind other elements */
+
+.progress {
+  background-color: var(--line-border-fill);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 0%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+/* Styling the progress element as a filled line border */
+/* Setting its background color using the --line-border-fill CSS variable, */
+/* positioning it absolutely, centering it vertically, setting its initial width to 0%, */
+/* placing it behind other elements, and adding a transition effect for smooth animation */
+
+.circle {
+  background-color: #1f1f1f;
+  color: #e2e2e2;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--line-border-empty);
+  transition: 0.4s ease;
+}
+/* Styling the circle element as a round button or indicator */
+/* Setting its background color to a dark shade, text color to a light shade, border-radius to make it circular, */
+/* fixing its height and width, making it a flex container with centered content, */
+/* setting its border to have a width of 3px and use the --line-border-empty CSS variable for its color, */
+/* and adding a transition effect for smooth animation */
+
+.circle.active {
+  border-color: var(--line-border-fill);
+}
+/* Adding the active class to a circle element changes its border color to the --line-border-fill CSS variable */
+
+.btn {
+  background-color: var(--line-border-fill);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 8px 30px;
+  margin: 5px;
+  font-size: 14px;
+}
+/* Styling the btn class as a button element */
+/* Setting its background color using the --line-border-fill CSS variable, */
+/* text color to white, no border, border-radius of 6px, cursor to pointer, */
+/* using the same font-family as the parent element, adding padding and margin, */
+/* and setting the font size to 14px */
+
+.btn:active {
+  transform: scale(0.98);
+}
+/* Applying a scaling effect to the btn class when it is actively clicked */
+
+.btn:focus {
+  outline: 0;
+}
+/* Removing the default focus outline for the btn class */
+
+.btn:disabled {
+  background-color: var(--line-border-empty);
+  cursor: not-allowed;
+}
+/* Styling the btn class when it is in a disabled state */
+/* Setting its background color using the --line-border-empty CSS variable, */
+/* and changing the cursor to not-allowed */
