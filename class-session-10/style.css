@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+/* Importing the "Lato" font from Google Fonts */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Apply box-sizing: border-box to all elements. 
+This makes sure that padding and border are included in the element's total width and height */
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #333;
+  color: #222;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* Set the font family to "Lato" for the body text,
+set the background color to #333, 
+set the text color to #222,
+hide horizontal scrollbar,
+and remove default margin from body */
+
+.container {
+  background-color: #fafafa;
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 50px;
+}
+
+/* Set the background color of the container to #fafafa,
+set the transform origin to the top left corner,
+apply a transition effect on the transform property with a duration of 0.5s and a linear timing function,
+set the width to 100% of the viewport width,
+set the minimum height to 100% of the viewport height,
+add 50px of padding to the container */
+
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+
+/* When the ".show-nav" class is added to the container element,
+rotate it by -20 degrees */
+
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+
+/* Set the position of the circle container to fixed,
+position it at the top left corner of the viewport,
+push it 100px above and 100px to the left of the viewport */
+
+.circle {
+  background-color: #ff7979;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+
+/* Style for a circle element:
+- Set the background color to #ff7979,
+- Set the height and width to 200px,
+- Apply a border-radius of 50% to make it circular,
+- Position it relative to its normal position,
+- Apply a transition effect on the transform property with a duration of 0.5s and a linear timing function */
+
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+
+/* When the ".show-nav" class is added to the container element,
+rotate the circle element by -70 degrees */
+
+.circle button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  border: 0;
+  font-size: 26px;
+  color: #fff;
+}
+
+/* Style for buttons inside the circle element:
+- Set the cursor to pointer,
+- Position them absolutely relative to the circle element,
+- Center them vertically and horizontally using top: 50% and left: 50%,
+- Set the height to 100px,
+- Make the background transparent,
+- Remove borders,
+- Set the font size to 26px,
+- Set the text color to #fff (white) */
+
+.circle button:focus {
+  outline: none;
+}
+
+/* Remove the default focus outline when a button inside the circle element is focused */
+
+.circle button#open {
+  left: 60%;
+}
+
+/* For the button with id "open" inside the circle element, move it towards the right by changing its left value to 60% */
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+/* For the button with id "close" inside the circle element:
+- Move it downwards by changing its top value to 60%,
+- Rotate it by 90 degrees,
+- Set the transform origin to the top left corner */
+
+.container.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+/* When the ".show-nav" class is added to the container element and it is immediately followed by a nav element, 
+move the list items inside the nav element horizontally to their original position using transform: translateX(0),
+and add a delay of 0.3s before applying the transition effect */
+
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 100;
+}
+
+/* Style for the nav element:
+- Set its position to fixed,
+- Position it at the bottom with a distance of 40px from the bottom edge of the viewport,
+- Position it at the left edge of the viewport,
+- Set the z-index to 100 (to make it appear above other elements) */
+
+nav ul {
+  list-style-type: none;
+  padding-left: 30px;
+}
+
+/* Style for the unordered list inside the nav element:
+- Remove the default bullet points,
+- Add 30px of padding to the left */
+
+nav ul li {
+  text-transform: uppercase;
+  color: #fff;
+  margin: 40px 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in;
+}
+
+/* Style for list items inside the nav element:
+- Transform text to uppercase,
+- Set the text color to #fff (white),
+- Add margin of 40px above and below the list item,
+- Move the list items horizontally to the left by changing their transform origin to -100%,
+- Apply a transition effect on the transform property with a duration of 0.4s and an ease-in timing function */
+
+nav ul li i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+/* Style for icons inside the list items:
+- Set the font size to 20px,
+- Add margin of 10px on the right side */
+
+nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+
+/* For the second list item (and onwards) inside the nav element:
+- Add a margin of 15px on the left side,
+- Move them horizontally to the left by changing their transform origin to -150% */
+
+nav ul li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200%);
+}
+
+/* For the third list item (and onwards) inside the nav element:
+- Add a margin of 30px on the left side,
+- Move them horizontally to the left by changing their transform origin to -200% */
+
+nav a {
+  color: #fafafa;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+/* Style for links inside the nav element:
+- Set the text color to #fafafa (light gray),
+- Remove underline from links,
+- Apply a transition effect on all properties with a duration of 0.5s */
+
+nav a:hover {
+  color: #ff7979;
+  font-weight: bold;
+}
+
+/* When hovering over a link inside the nav element:
+- Change the text color to #ff7979 (a shade of red)
+- Make the font weight bold */
+
+.content img {
+  max-width: 100%;
+}
+
+/* Style for images inside the content element:
+- Set the maximum width to 100% (to ensure the image scales proportionally within its container) */
+
+.content {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+/* Style for the content element:
+- Set the maximum width to 1000px,
+- Center the element horizontally by setting the left and right margins to auto */
+
+.content h1 {
+  margin: 0;
+}
+
+/* Style for h1 elements inside the content element:
+- Remove the top and bottom margin */
+
+.content small {
+  color: #555;
+  font-style: italic;
+}
+
+/* Style for small elements inside the content element:
+- Set the text color to #555 (a shade of gray)
+- Apply italic font style */
+
+.content p {
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Style for p elements inside the content element:
+- Set the text color to #333 (a shade of dark gray)
+- Set the line height to 1.5 (to provide comfortable spacing between lines of text) */
