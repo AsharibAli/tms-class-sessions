@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"); /* Imports the "Roboto" font family from Google Fonts with specified weights */
+
+* {
+  box-sizing: border-box;
+  /* Applies the border-box sizing model to all elements */
+}
+
+body {
+  /* background-image: linear-gradient(90deg, #7d5fff, #7158e2); */
+  background-image: url(https://media.istockphoto.com/id/1445947603/photo/magnifying-glass-calculator-and-charts-on-paper.jpg?s=2048x2048&w=is&k=20&c=fXpHNBxwPUSodmO16wDOEWD-hOdYgVpQQLj0I1Z9aAQ=);
+  /* Sets a linear gradient background on the body element, ranging from #7d5fff to #7158e2, horizontally */
+  font-family: "Roboto", sans-serif;
+  /* Sets the font family of the body text to "Roboto" and fallback to a sans-serif font if it's not available */
+  display: flex;
+  /* Sets the display property of the body to flex */
+  align-items: center;
+  /* Centers the flex items vertically */
+  justify-content: center;
+  /* Centers the flex items horizontally */
+  height: 100vh;
+  /* Sets the height of the body to 100% of the viewport height */
+  overflow: hidden;
+  /* Hides any content that overflows the body element */
+  margin: 0;
+  /* Removes the default margin on the body element */
+}
+
+.search {
+  position: relative;
+  /* Positions the element relative to its normal position within the document flow */
+  height: 50px;
+  /* Sets the height of the element to 50 pixels */
+}
+
+.search .input {
+  background-color: #fff;
+  /* Sets the background color of the element to white */
+  border: 0;
+  /* Removes the border of the element */
+  font-size: 18px;
+  /* Sets the font size of the element to 18 pixels */
+  padding: 15px;
+  /* Adds 15 pixels of padding to all sides of the element */
+  height: 50px;
+  /* Sets the height of the element to 50 pixels */
+  width: 50px;
+  /* Sets the width of the element to 50 pixels */
+  transition: width 0.3s ease;
+  /* Adds a transition effect to the width property with a duration of 0.3 seconds and an easing function of ease */
+}
+
+.btn {
+  background-color: #fff;
+  /* Sets the background color of the element to white */
+  border: 0;
+  /* Removes the border of the element */
+  cursor: pointer;
+  /* Changes the cursor to a pointer when hovering over the element */
+  font-size: 24px;
+  /* Sets the font size of the element to 24 pixels */
+  position: absolute;
+  /* Positions the element absolutely within its closest positioned ancestor */
+  top: 0;
+  /* Sets the distance between the top edge of the element and the top edge of its offset parent to 0 */
+  left: 0;
+  /* Sets the distance between the left edge of the element and the left edge of its offset parent to 0 */
+  height: 50px;
+  /* Sets the height of the element to 50 pixels */
+  width: 50px;
+  /* Sets the width of the element to 50 pixels */
+  transition: transform 0.3s ease;
+  /* Adds a transition effect to the transform property with a duration of 0.3 seconds and an easing function of ease */
+}
+
+.btn:focus,
+.input:focus {
+  outline: none;
+  /* Removes the focus outline on the button and input elements */
+}
+
+.search.active .input {
+  width: 200px;
+  /* Sets the width of the input element inside the active search container to 200 pixels */
+}
+
+.search.active .btn {
+  transform: translateX(198px);
+  /* Moves the button element inside the active search container horizontally by 198 pixels */
+}
