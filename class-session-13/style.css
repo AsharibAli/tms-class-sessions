@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+/* Imports the "Roboto" font from Googk
+le Fonts */
+
+* {
+  box-sizing: border-box;
+}
+/* Applies box-sizing: border-box to all elements, which includes padding and border in the element's total width and height */
+
+body {
+  background-color: #efedd6;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow-x: hidden;
+}
+/* Styles for the body element:
+- Sets the background color to #efedd6
+- Uses the "Roboto" font family
+- Displays the content in a flex container with column layout
+- Centers the content both horizontally and vertically
+- Removes any default margin
+- Hides horizontal overflow */
+
+h1 {
+  margin: 10px;
+}
+/* Styles for h1 elements:
+- Adds a 10px margin */
+
+.box {
+  background-color: steelblue;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  transform: translateX(400%);
+  transition: transform 0.4s ease;
+}
+/* Styles for elements with the class "box":
+- Sets the background color to steelblue
+- Sets the text color to white
+- Displays the content in a flex container with center alignment
+- Sets the width to 400px and height to 200px
+- Adds a 10px margin
+- Sets the border-radius to 10px for rounded corners
+- Applies a box-shadow
+- Initial transform of translating by 400% (hidden off-screen)
+- Adds a transition of 0.4s with ease timing function for smooth animation */
+
+.box:nth-of-type(even) {
+  transform: translateX(-400%);
+}
+/* Styles for even-indexed elements with the class "box":
+- Overrides the transform property to translate by -400% (hidden off-screen on the other side) */
+
+.box.show {
+  transform: translateX(0);
+}
+/* Styles for elements with the class "box" and "show":
+- Overrides the transform property to translate by 0 (visible on the screen) */
+
+.box h2 {
+  font-size: 45px;
+}
+/* Styles for h2 elements inside elements with the class "box":
+- Sets the font size to 45px */
