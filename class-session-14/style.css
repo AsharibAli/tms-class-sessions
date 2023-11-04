@@ -1,29 +1,301 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-/* Import the font from Google Fonts */
+/* Imports the Roboto font from Google Fonts */
 
 :root {
+  /* Defines CSS custom properties (variables) for use throughout the stylesheet */
+
   --left-bg-color: rgba(87, 84, 236, 0.7);
+  /* Sets the background color for the left split container */
+
   --right-bg-color: rgba(43, 43, 43, 0.8);
+  /* Sets the background color for the right split container */
+
+  --left-btn-hover-color: rgba(87, 84, 236, 1);
+  /* Sets the hover color for buttons in the left split container */
+
   --right-btn-hover-color: rgba(28, 122, 28, 1);
-  --left-btn-hovercolor: rgba(87, 84, 236, 1);
+  /* Sets the hover color for buttons in the right split container */
+
   --hover-width: 75%;
+  /* Sets the width of the split container on hover */
+
   --other-width: 25%;
+  /* Sets the width of the other split container when one is hovered */
+
   --speed: 1000ms;
+  /* Sets the transition speed for animations */
 }
 
 * {
   box-sizing: border-box;
+  /* Ensures all elements include padding and borders in their total width and height */
 }
 
 body {
   font-family: "Roboto", sans-serif;
+  /* Sets the default font family to Roboto */
+
   height: 100vh;
+  /* Sets the body element height to 100% of the viewport height (full screen) */
+
   overflow: hidden;
+  /* Hides any content that overflows the body element (scrollbars won't appear) */
+
   margin: 0;
+  /* Removes the default margin set by the browser */
 }
 
 h1 {
+  /* Styles for the heading element */
+
   font-size: 4rem;
+  /* Sets the font size to 4rem (64px) */
+  /* 1rem = 16px */
+
   color: #fff;
+  /* Sets the text color to white */
+
   position: absolute;
+  /* Makes the heading positioned absolutely */
+
+  left: 50%;
+  /* Moves the heading to the center horizontally */
+
+  top: 20%;
+  /* Positions the heading 20% from the top of the viewport */
+
+  transform: translateX(-50%);
+  /* Centers the heading using a translation transform */
+
+  white-space: nowrap;
+  /* Prevents the heading from wrapping to multiple lines */
+}
+
+.btn {
+  /* Styles for buttons */
+
+  position: absolute;
+  /* Makes the buttons positioned absolutely */
+
+  display: flex;
+  /* Displays the buttons as a flex container */
+
+  align-items: center;
+  /* Vertically centers the content within the buttons */
+
+  justify-content: center;
+  /* Horizontally centers the content within the buttons */
+
+  left: 50%;
+  /* Moves the buttons to the center horizontally */
+
+  top: 40%;
+  /* Positions the buttons 40% from the top of the viewport */
+
+  transform: translateX(-50%);
+  /* Centers the buttons using a translation transform */
+
+  text-decoration: none;
+  /* Removes underline from text within buttons */
+
+  color: #fff;
+  /* Sets the text color to white */
+
+  border: #fff solid 0.2rem;
+  /* Sets the border color, style, and width for the buttons */
+
+  font-size: 1rem;
+  /* Sets the font size to 1rem (16px) */
+
+  font-weight: bold;
+  /* Sets the font weight to bold */
+
+  text-transform: uppercase;
+  /* Transforms the text to uppercase */
+
+  width: 15rem;
+  /* Sets the width of the buttons */
+
+  padding: 1.5rem;
+  /* Adds padding to the buttons */
+}
+
+.split.left .btn:hover {
+  /* Styles for when the left split container is hovered and the button is hovered */
+
+  background-color: var(--left-btn-hover-color);
+  /* Sets the background color of the button to the left hover color */
+
+  border-color: var(--left-btn-hover-color);
+  /* Sets the border color of the button to the left hover color */
+}
+
+.split.right .btn:hover {
+  /* Styles for when the right split container is hovered and the button is hovered */
+
+  background-color: var(--right-btn-hover-color);
+  /* Sets the background color of the button to the right hover color */
+
+  border-color: var(--right-btn-hover-color);
+  /* Sets the border color of the button to the right hover color */
+}
+
+.container {
+  /* Styles for the main container element */
+
+  position: relative;
+  /* Makes the container positioned relatively */
+
+  width: 100%;
+  /* Sets the width of the container to 100% of its parent */
+
+  height: 100%;
+  /* Sets the height of the container to 100% of its parent */
+
+  background: #333;
+  /* Sets the background color of the container to a dark gray */
+}
+
+.split {
+  /* Styles for the split container elements */
+
+  position: absolute;
+  /* Makes the split containers positioned absolutely */
+
+  width: 50%;
+  /* Sets the width of the split containers to 50% of their parent */
+
+  height: 100%;
+  /* Sets the height of the split containers to 100% of their parent */
+
+  overflow: hidden;
+  /* Hides any content that overflows the split containers (scrollbars won't appear) */
+}
+
+.split.left {
+  /* Styles specific to the left split container */
+
+  left: 0;
+  /* Positions the left split container flush with the left edge of its parent */
+
+  background: url("ps.jpg");
+  /* Sets the background image for the left split container */
+
+  background-repeat: no-repeat;
+  /* Prevents the background image from repeating */
+
+  background-size: cover;
+  /* Scales the background image to cover the entire container */
+}
+
+.split.left::before {
+  /* Styles for the pseudo-element before the left split container */
+
+  content: "";
+  /* Inserts an empty pseudo-element */
+
+  position: absolute;
+  /* Makes the pseudo-element positioned absolutely */
+
+  width: 100%;
+  /* Sets the width of the pseudo-element to 100% of its parent */
+
+  height: 100%;
+  /* Sets the height of the pseudo-element to 100% of its parent */
+
+  background-color: var(--left-bg-color);
+  /* Sets the background color of the pseudo-element to the left background color */
+}
+
+.split.right {
+  /* Styles specific to the right split container */
+
+  right: 0;
+  /* Positions the right split container flush with the right edge of its parent */
+
+  background: url("xbox.jpg");
+  /* Sets the background image for the right split container */
+
+  background-repeat: no-repeat;
+  /* Prevents the background image from repeating */
+
+  background-size: cover;
+  /* Scales the background image to cover the entire container */
+}
+
+.split.right::before {
+  /* Styles for the pseudo-element before the right split container */
+
+  content: "";
+  /* Inserts an empty pseudo-element */
+
+  position: absolute;
+  /* Makes the pseudo-element positioned absolutely */
+
+  width: 100%;
+  /* Sets the width of the pseudo-element to 100% of its parent */
+
+  height: 100%;
+  /* Sets the height of the pseudo-element to 100% of its parent */
+
+  background-color: var(--right-bg-color);
+  /* Sets the background color of the pseudo-element to the right background color */
+}
+
+.split.right,
+.split.left,
+.split.right::before,
+.split.left::before {
+  /* Styles for both split containers and their pseudo-elements */
+
+  transition: all var(--speed) ease-in-out;
+  /* Applies a transition to all CSS properties with the specified duration and easing function */
+}
+
+.hover-left .left {
+  /* Styles for when the left split container is hovered */
+
+  width: var(--hover-width);
+  /* Sets the width of the left split container to the hover width */
+}
+
+.hover-left .right {
+  /* Styles for when the left split container is hovered */
+
+  width: var(--other-width);
+  /* Sets the width of the right split container to the other width */
+}
+
+.hover-right .right {
+  /* Styles for when the right split container is hovered */
+
+  width: var(--hover-width);
+  /* Sets the width of the right split container to the hover width */
+}
+
+.hover-right .left {
+  /* Styles for when the right split container is hovered */
+
+  width: var(--other-width);
+  /* Sets the width of the left split container to the other width */
+}
+
+@media (max-width: 800px) {
+  /* Media query for screens with a maximum width of 800px */
+
+  h1 {
+    font-size: 2rem;
+    /* Sets the font size of the heading to 2rem (32px) */
+
+    top: 30%;
+    /* Positions the heading 30% from the top of the viewport */
+  }
+
+  .btn {
+    padding: 1.2rem;
+    /* Adjusts the padding of the buttons */
+
+    width: 12rem;
+    /* Adjusts the width of the buttons */
+  }
 }
