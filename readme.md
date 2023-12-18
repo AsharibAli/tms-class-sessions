@@ -1,1 +1,1 @@
-# All of the classes sessions code at tms in one place!
+# All of the classes sessions code at TMS in one place!
